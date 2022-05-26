@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.Text;
 
 namespace Kata_Training;
 public class Kata
@@ -116,7 +117,50 @@ public class Kata
 	}
 
 	public static int[] minMax(int[] lst) => new int[] { lst.Min(), lst.Max() };
+
+	//return new int[] { lst.Min(), lst.Max() };
+
+	public double[] Tribonacci(double[] signature, int n)
+	{
+		// hackonacci me
+		double[] result = new double[n];
+
+		if (n == 0)
+		{
+			return new double[0];
+		}
+		for (int i = 0; i < n; i++)
+		{
+			if (i < 3)
+			{
+				result[i] = signature[i];
+			}
+			else
+				result[i] = result[i - 3] + result[i - 2] + result[i - 1];
+		}
+		return result;
+	}
+
+	public static string ReverseWords(string str)
+	{
+
+		string[] result = new string[str.Length];
 	
-		//return new int[] { lst.Min(), lst.Max() };
-	
+		StringBuilder sb = new StringBuilder();
+		string[] textSplit = str.Split(" ");
+		for (int i = 0; i < textSplit.Length; i++)
+		{
+			for (int j = textSplit[i].Length - 1; j >= 0; j--)
+			{
+				result[i] +=textSplit[i][j];
+			}
+			sb.Append(result[i]);
+			sb.Append(' ');
+
+		}
+
+		return sb.ToString().TrimEnd();
+	}
+
+
 }

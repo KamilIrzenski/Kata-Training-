@@ -190,4 +190,41 @@ namespace Kata_Training_NUnitTest
 		}
 	}
 
+	[TestFixture]
+	public class XbonacciTest
+	{
+		private Kata variabonacci;
+
+		[SetUp]
+		public void SetUp()
+		{
+			variabonacci = new Kata();
+		}
+
+		[TearDown]
+		public void TearDown()
+		{
+			variabonacci = null;
+		}
+
+		[Test]
+		public void Tests()
+		{
+			Assert.AreEqual(new double[] { 1, 1, 1, 3, 5, 9, 17, 31, 57, 105 }, variabonacci.Tribonacci(new double[] { 1, 1, 1 }, 10));
+			Assert.AreEqual(new double[] { 0, 0, 1, 1, 2, 4, 7, 13, 24, 44 }, variabonacci.Tribonacci(new double[] { 0, 0, 1 }, 10));
+			Assert.AreEqual(new double[] { 0, 1, 1, 2, 4, 7, 13, 24, 44, 81 }, variabonacci.Tribonacci(new double[] { 0, 1, 1 }, 10));
+		}
+	}
+
+	[TestFixture]
+	public class Testss
+	{
+		[Test]
+		public void Example()
+		{
+			Assert.AreEqual("sihT si na !elpmaxe", Kata.ReverseWords("This is an example!"));
+		}
+	}
+
+
 }
