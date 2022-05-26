@@ -162,5 +162,17 @@ public class Kata
 		return sb.ToString().TrimEnd();
 	}
 
+	public static int GetAge(string inputString)
+	{
+		// return correct age (int). Happy coding :)
+		string checkNumber = inputString.Substring(0, 1);
+
+		int value = 0;
+		int.TryParse(checkNumber, out value);
+
+		return value;
+
+	}
+
 
 }
